@@ -18,7 +18,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
  * @param {String} title 
  * @author <haridasafiuza@gmail.com>
  */
-const Toolbar = ({title}) => {
+const Toolbar = ({title, customStyle=null}) => {
     
     return (
         <>
