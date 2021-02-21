@@ -1,18 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import {
-    Image,
     SafeAreaView,
     View,
     Text,
     FlatList
 } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 import {styles} from './styles/ListScreenStyle';
 
 import Toolbar from '~/components/toolbar';
 
+import {LOGO} from '~/assets/main/appImages';
+
 import SectionInfo  from "~/components/sectionInfo";
+import Icon from 'react-native-vector-icons/Feather';
 
 const DATA = [
     {
@@ -20,46 +23,46 @@ const DATA = [
       bio: '-aed5--aed5--aed5--aed5--aed5--aedaaaaaas56565ffssd5--aed5aed5aed5...-',
       title: 'First Hari Item',
     },
-    {
-      id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-      bio: '-aed5--aed5--aed5--aed5--aed5--aedaaaaaas56565ffssd5--aed5aed5aed5...-',
-      title: 'First Hari Item',
-    },
-    {
-      id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-      bio: '-aed5--aed5--aed5--aed5--aed5--aedaaaaaas56565ffssd5--aed5aed5aed5...-',
-      title: 'First Hari Item',
-    },
-    {
-      id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-      bio: '-aed5--aed5--aed5--aed5--aed5--aedaaaaaas56565ffssd5--aed5aed5aed5...-',
-      title: 'First Hari Item',
-    },
-    {
-      id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-      bio: '-aed5--aed5--aed5--aed5--aed5--aedaaaaaas56565ffssd5--aed5aed5aed5...-',
-      title: 'First Hari Item',
-    },
-    {
-      id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-      bio: '-aed5--aed5--aed5--aed5--aed5--aedaaaaaas56565ffssd5--aed5aed5aed5...-',
-      title: 'First Hari Item',
-    },
-    {
-      id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-      bio: '-aed5--aed5--aed5--aed5--aed5--aedaaaaaas56565ffssd5--aed5aed5aed5...-',
-      title: 'First Hari Item',
-    },
-    {
-      id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-      bio: '-aed5--aed5--aed5--aed5--aed5--aedaaaaaas56565ffssd5--aed5aed5aed5...-',
-      title: 'First Hari Item',
-    },
-    {
-      id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-      bio: '-aed5--aed5--aed5--aed5--aed5--aedaaaaaas56565ffssd5--aed5aed5aed5...-',
-      title: 'First Hari Item',
-    },
+    // {
+    //   id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+    //   bio: '-aed5--aed5--aed5--aed5--aed5--aedaaaaaas56565ffssd5--aed5aed5aed5...-',
+    //   title: 'First Hari Item',
+    // },
+    // {
+    //   id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+    //   bio: '-aed5--aed5--aed5--aed5--aed5--aedaaaaaas56565ffssd5--aed5aed5aed5...-',
+    //   title: 'First Hari Item',
+    // },
+    // {
+    //   id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+    //   bio: '-aed5--aed5--aed5--aed5--aed5--aedaaaaaas56565ffssd5--aed5aed5aed5...-',
+    //   title: 'First Hari Item',
+    // },
+    // {
+    //   id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+    //   bio: '-aed5--aed5--aed5--aed5--aed5--aedaaaaaas56565ffssd5--aed5aed5aed5...-',
+    //   title: 'First Hari Item',
+    // },
+    // {
+    //   id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+    //   bio: '-aed5--aed5--aed5--aed5--aed5--aedaaaaaas56565ffssd5--aed5aed5aed5...-',
+    //   title: 'First Hari Item',
+    // },
+    // {
+    //   id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+    //   bio: '-aed5--aed5--aed5--aed5--aed5--aedaaaaaas56565ffssd5--aed5aed5aed5...-',
+    //   title: 'First Hari Item',
+    // },
+    // {
+    //   id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+    //   bio: '-aed5--aed5--aed5--aed5--aed5--aedaaaaaas56565ffssd5--aed5aed5aed5...-',
+    //   title: 'First Hari Item',
+    // },
+    // {
+    //   id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+    //   bio: '-aed5--aed5--aed5--aed5--aed5--aedaaaaaas56565ffssd5--aed5aed5aed5...-',
+    //   title: 'First Hari Item',
+    // },
     // {
     //     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
     //     title: 'First Item',
@@ -185,20 +188,29 @@ const Item = ({ title }) => (
  * @param {String} title 
  * @author <haridasafiuza@gmail.com>
  */
-const ListScreen = ({ navigation }) => {
+function ListScreen ({ navigation }) {
+
     const renderItem = ({ item }) => (
-        <SectionInfo 
-          title={item.title} 
-          resume={item.bio}
-          avatar='OI'
-          />
+      <SectionInfo 
+        title={item.title} 
+        resume={item.bio}
+        avatar={LOGO}
+        onPress={() => navigateToScreen('Main')}
+        />
       );
 
+      const navigateToScreen = ({screen}) => {
+        navigation.navigate('Main');    
+    
+    }
+
    return ( 
-        <SafeAreaView style={styles.safe}>
-
-            <Toolbar title={'Pioneiras'}/>
-
+        <View style={styles.safe}>
+                              
+            <Toolbar title={'Pioneiras'}  onPress={() => navigateToScreen('Main')}/>
+            <TouchableOpacity style={{ marginLeft: 2,backgroundColor: 'red', width: 160 }} onPress={navigateToScreen('Main')}>
+                        <Icon name="arrow-left" size={25} color="#222" />
+                    </TouchableOpacity>
             <FlatList
                 data={DATA}
                 renderItem={renderItem}
@@ -206,7 +218,7 @@ const ListScreen = ({ navigation }) => {
             />
 
 
-        </SafeAreaView>
+        </View>
    );
 }
 
