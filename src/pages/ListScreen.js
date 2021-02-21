@@ -40,10 +40,13 @@ function ListScreen ({ navigation }) {
         title={navigation.state.params.part} 
         resume={item.bio}
         avatar={PIOONERS_TREE}
-        onPress={() => console.log('navigation.goBack()')}
+        onPress={() => navigateToScreen('BiographyScreen')}
         />
       );
 
+    const navigateToScreen = (screen) => {
+      navigation.navigate(screen)
+    }
     const goBack = () => {
       navigation.navigate('Main');
     }
