@@ -13,32 +13,36 @@ import {
 
 import {
     View,
+    TouchableOpacity,
 } from 'react-native';
 
-import { TouchableHighlight } from 'react-native-gesture-handler';
-
-import Icon from 'react-native-vector-icons/Feather';
+import Icon from 'react-native-vector-icons/FontAwesome5';
+import { styles } from './style';
 
 /**
  * A component to show a toolbar, navbar by title name
  * 
  * @param {String} title 
+ * @param {String} icon name from Feather Class
+ * @param {Function} onPress action to do when click on icon
+ * @param {StyleSheet} customStyle tyle to vustomize the component item
+
  * @author <haridasafiuza@gmail.com>
  */
-const Toolbar = ({title, onPress,customStyle=null}) => {
+const Toolbar = ({title, icon,onPress,customStyle=null}) => {
     
     return (
         <>
             {/* Create a Toolbar/Header component to atomic screen and component in the project */}
             <Header>
             <Left>
-                <View style={{ height: 40 }}>
-                    <TouchableHighlight style={{ marginLeft: 2, width: 60 }} onPress={onPress}>
-                        <Icon name="arrow-left" size={25} color="#222" />
-                    </TouchableHighlight>
+                <View>
+                    <TouchableOpacity onPress={onPress}>
+                        <Icon name={icon} size={25} color="#333" />
+                    </TouchableOpacity>
                 </View>
             </Left>
-            <Body>
+            <Body style={styles.title}>
                 <Title>{title}</Title>
             </Body>
             <Right />

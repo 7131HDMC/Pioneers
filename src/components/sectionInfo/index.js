@@ -4,8 +4,8 @@ import {
     Image,
     View,
     Text,
+    TouchableOpacity,
 } from 'react-native';
-import { TouchableHighlight } from 'react-native-gesture-handler';
 
 import { styles } from './style';
 
@@ -16,7 +16,7 @@ import { styles } from './style';
  * @param {String} resume Section description
  * @param {NodeRequire} avatar image source
  * @param {Function} action function to do when click 
- * @param customStyle tyle to vustomize the component item
+ * @param {StyleSheet} customStyle tyle to vustomize the component item
  * 
  * @author <haridasafiuza@gmail.com>
  */
@@ -24,7 +24,7 @@ const SectionInfo = ({title , resume='', avatar, onPress,customStyle=null}) => {
 
     return (
         <>
-            <TouchableHighlight style={styles.area} onPress={() => onPress}>
+            <TouchableOpacity style={styles.area} onPress={() => console.log('teste')}>
                 <View style={styles.container}>
                     <View style={styles.avatar}>
                         <Image 
@@ -43,7 +43,7 @@ const SectionInfo = ({title , resume='', avatar, onPress,customStyle=null}) => {
 
                     </View>
                 </View>
-            </TouchableHighlight>
+            </TouchableOpacity>
         </>
     );
 

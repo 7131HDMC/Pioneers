@@ -6,9 +6,13 @@ import {
 
 import Tree from './TreeScreen';
 
-const Main = () => (
+/**
+ * Main component
+ * @param {Navigator} navigation 
+ */
+const Main = ({navigation}) => (
   <>
-      <Tree/>
+      <Tree navigation={navigation}/>
   </>
 );
 

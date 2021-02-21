@@ -1,6 +1,6 @@
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 
-import Main from '~/pages/Main/TreeScreen';
+import Main from '~/pages/Main/';
 import ListScreen from '~/pages/ListScreen';
 
 const listMenu = {
