@@ -9,7 +9,6 @@ import {
   Body,
   Icon,
 } from 'native-base';
-
 import ImageMapper from 'react-native-image-mapper';
 
 import { MAX_WIDTH, MAX_HEIGHT, MAPPING, TREE_IMG } from './TreeScreenStyle';
@@ -27,7 +26,7 @@ export default function Tree({ navigation }) {
 
     <Container>
 
-      <Toolbar title={'Pioneiras'}/>
+      <Toolbar title="Pioneiras" icon="bars"/>
 
       {/*Mapped area*/}
       <ImageMapper
@@ -36,8 +35,8 @@ export default function Tree({ navigation }) {
         imgMap={MAPPING}
         imgSource={TREE_IMG}
         onPress={(item, idx, event) => { 
-          console.log('DEBUG')
-          navigation.navigate('ListScreen', { part: item.name })
+          console.log('navigation');
+          navigation.navigate('ListScreen', { part: item.name });
         }
           // navigation.navigate('List', { part: item.name })
         }
