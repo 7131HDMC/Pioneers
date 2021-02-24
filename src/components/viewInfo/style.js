@@ -1,23 +1,23 @@
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
-    area: {
-        flexGrow: 1,
-        flex: 1,
-        marginVertical: 4,
-        marginHorizontal: 2,
-        height: 75,
-        maxHeight: 77,
-        padding: 6
-    },
-    container: {
+
+  container: {
+    height: '100%',
+    flexDirection: "column",
+    alignItems: 'center',
+    alignContent: "space-around",
+    borderRadius: 6,
+    padding: 5
+  },
+    header:{
       flex: 1,
-      flexDirection: "row",
+      flexDirection: "column",
       alignItems: 'center',
-      borderWidth: 3,
-      borderColor: '#33333320',
-      borderRadius: 6,
-      padding: 5
+      marginTop: 35,
+      marginEnd: 25,
+      marginStart: 25
+
     },
     avatar: {
       flex: 5,
@@ -37,14 +37,25 @@ export const styles = StyleSheet.create({
         marginLeft: 10
     },
     title: {
-        fontSize: 16,
-        maxWidth: 140
+        fontSize: 26,
+
+        borderRadius: 15,
+        
+
     },
     subtitle: {
         width: 270,
         backgroundColor: 'red',
         color: '#33333399',
         fontSize: 12
+    },
+    body: {
+      flex: 1,
+      borderRadius: 15,
+      alignItems: 'center',
+      marginEnd: 15,
+      marginStart: 15,
+
     }
 });
   

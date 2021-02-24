@@ -37,7 +37,7 @@ const SectionInfo = ({title , resume='', avatar, onPress,customStyle=null}) => {
                             {title}
                         </Text>
                         {/**Need treat maximum carachters to item descritions */}
-                        <Text style={styles.subtitle}>
+                        <Text style={styles.subtitle} lineBreakMode="head" numberOfLines={2} >
                             {resume}
                         </Text>
 
