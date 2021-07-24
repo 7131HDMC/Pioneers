@@ -36,7 +36,7 @@ export default function Tree({ navigation }) {
         imgSource={TREE_IMG}
         onPress={(item, idx, event) => { 
           console.log('navigation');
-          navigation.navigate('ListScreen', { part: item.name });
+          navigation.navigate('ListWomen', { part: item.name });
         }
           // navigation.navigate('List', { part: item.name })
         }

@@ -45,14 +45,14 @@ function ListWomen ({ navigation }) {
       );
 
     const goBack = () => {
-      navigation.navigate('Main');
+      navigation.navigate('Home');
     }
 
    return ( 
         <View style={styles.safe}>
                               
             <Toolbar 
-              title={'Pioneiras'}  
+              title={navigation.state.params.part}  
               icon='arrow-left' 
               onPress={() => goBack()}
             />
