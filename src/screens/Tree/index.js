@@ -11,7 +11,7 @@ import {
 } from 'native-base';
 import ImageMapper from 'react-native-image-mapper';
 
-import { MAX_WIDTH, MAX_HEIGHT, MAPPING, TREE_IMG } from './TreeScreenStyle';
+import { MAX_WIDTH, MAX_HEIGHT, MAPPING, TREE_IMG } from './style';
 
 import Toolbar from '~/components/toolbar';
 

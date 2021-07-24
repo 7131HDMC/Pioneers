@@ -1,10 +1,10 @@
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 
-import Main from '~/pages/Main/';
-import ListScreen from '~/pages/ListScreen';
+import Home from '~/screens/Home/';
+import ListScreen from '~/screens/ListScreen';
 
 const listMenu = {
-    Main,
+    Home,
     ListScreen
 };
 

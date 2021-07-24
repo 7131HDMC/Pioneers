@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import {PIOONERS_TREE} from '~/assets/main/appImages';
+import { PIOONERS_TREE } from '~/assets/main/appImages';
 
 export const styles = StyleSheet.create({
   // eslint-disable-next-line react-native/no-unused-styles
