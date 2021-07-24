@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 // import { TouchableOpacity } from 'react-native-gesture-handler';
 
-import {styles} from './styles/ListScreenStyle';
+import {styles} from './style';
 
 import Toolbar from '~/components/toolbar';
 
@@ -33,7 +33,7 @@ const DATA = [
  * 
  * @author <haridasafiuza@gmail.com>
  */
-function ListScreen ({ navigation }) {
+function ListWomen ({ navigation }) {
 
     const renderItem = ({ item }) => (
       <SectionInfo 
@@ -68,4 +68,4 @@ function ListScreen ({ navigation }) {
    );
 }
 
-export default ListScreen;
+export default ListWomen;
