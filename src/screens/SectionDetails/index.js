@@ -8,12 +8,15 @@ import {
 } from 'react-native';
 
 import { Background } from '~/components/Background';
-
+import {styles} from './style';
 export function SectionDetails()
 {
     return (
-        <Background>
-            <Text>OLÄ</Text>
+        <Background primary="#333" secondary="#fff">
+            <View style={styles.container}>
+                <Text>OLÄ</Text>
+
+            </View>
         </Background>
     );
 }
