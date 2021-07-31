@@ -24,7 +24,7 @@ const SectionInfo = ({title , resume='', avatar, onPress,customStyle=null}) => {
 
     return (
         <>
-            <TouchableOpacity style={styles.area} onPress={() => console.log('teste')}>
+            <TouchableOpacity style={styles.area} onPress={onPress}>
                 <View style={styles.container}>
                     <View style={styles.avatar}>
                         <Image 

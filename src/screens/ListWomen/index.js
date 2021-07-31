@@ -40,7 +40,7 @@ function ListWomen ({ navigation }) {
         title={navigation.state.params.part} 
         resume={item.bio}
         avatar={PIOONERS_TREE}
-        onPress={() => console.log('navigation.goBack()')}
+        onPress={() => navigation.navigate('SectionDetails')}
         />
       );
 
